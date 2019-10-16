@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000 //porta do horoku
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public') //caminho da pasta public ... static directory para TODAS as paginas
@@ -106,8 +107,8 @@ app.get('*', function(req, res){
     }
   });
 
-app.listen(3000, function(){
-    console.log('Running the app!')
+app.listen(port, function(){
+    console.log('Running the app using port: '+port)
 })
 
 
